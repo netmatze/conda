@@ -1,0 +1,254 @@
+conda create --name cuda python=3.12 -y
+conda activate cuda
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+pip install "tensorflow<2.12"
+python -m pip install tensorflow[and-cuda]<2.11
+pip install jupyter notebook -y
+jupyter notebook
+
+import tensorflow as tf
+gpus = tf.config.list_physical_devices("GPU")
+if gpus:
+	for gpu in gpus:
+		print("Found a GPU with the name:", gpu)
+	else:
+		print("Failed to detect a GPU.")
+
+conda create --name cuda python=3.12 -y
+conda activate cuda
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+import torch
+
+# Check if PyTorch is using the GPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"PyTorch is using: {device}")
+
+# Print PyTorch version
+print(f"PyTorch version: {torch.__version__}")
+
+# Test a simple PyTorch tensor operation on the GPU
+x = torch.tensor([2.0, 3.0], device=device)
+y = torch.tensor([4.0, 5.0], device=device)
+result = x * y
+print(f"Result of tensor operation: {result}")
+
+nvidia-smi
+
+**********************************************************************
+* create langchan environmet with torch transformers and huggingface *
+**********************************************************************
+
+conda env list
+
+conda activate langchain
+
+conda install -c pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch
+
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+conda install jupyter
+
+pip install pandas
+
+pip install numpy
+
+pip install transformers
+
+pip install openai
+
+pip install huggingface_hub
+
+pip install langchain-community
+
+pip install langchain-experimental
+
+pip install langchain-openai
+
+pip install accelerate
+
+pip install bitsandbytes
+
+pip install ctransformers
+
+pip install ctransformers[cuda]
+
+pip install langchainhub
+ 
+****************************************
+* create langchan environmet with cuda *
+****************************************
+
+conda create --name langchain_cuda python=3.11 -y
+
+conda activate langchain_cuda
+
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+conda install jupyter
+
+import torch
+
+# Check if PyTorch is using the GPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"PyTorch is using: {device}")
+
+# Print PyTorch version
+print(f"PyTorch version: {torch.__version__}")
+
+****************************************
+* create yolov8 environmet with cuda *
+****************************************
+
+conda create --name yolov8 python=3.11 -y
+
+conda activate yolov8
+
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+pip install ultralytics
+
+conda install jupyter
+
+import torch
+
+# Check if PyTorch is using the GPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"PyTorch is using: {device}")
+
+# Print PyTorch version
+print(f"PyTorch version: {torch.__version__}")
+
+************************************************
+* create tensorflow==2.10 environmet with cuda *
+************************************************
+
+conda create --name tensorflow_2_10 python=3.10 -y
+
+conda activate tensorflow_2_10
+
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+
+pip install tensorflow==2.10
+
+import tensorflow as tf
+
+tf.config.list_physical_devices('GPU')
+
+tf.test.is_gpu_available()
+
+****************************************
+* create pytorch environmet with cuda *
+****************************************
+
+conda create --name pytorch_cuda python=3.11 -y
+
+conda activate pytorch_cuda
+
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+conda install jupyter
+
+import torch
+
+# Check if PyTorch is using the GPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"PyTorch is using: {device}")
+
+# Print PyTorch version
+print(f"PyTorch version: {torch.__version__}")
+
+************************************************
+* create stable diffusion environmet with cuda *
+************************************************
+
+conda create --name stablediffusion_cuda python=3.11 -y
+
+conda activate stablediffusion_cuda
+
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+pip install diffusers
+
+pip install --upgrade diffusers[torch] -q
+
+pip install autotrain-advanced
+
+autotrain setup --update-torch
+
+conda install jupyter
+
+import torch
+
+# Check if PyTorch is using the GPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"PyTorch is using: {device}")
+
+# Print PyTorch version
+print(f"PyTorch version: {torch.__version__}")
+
+************************************
+* create nemo environmet with cuda *
+************************************
+
+conda create --name nemo_cuda python=3.8 -y
+
+conda activate nemo_cuda
+
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+conda install jupyter
+
+import torch
+
+# Check if PyTorch is using the GPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"PyTorch is using: {device}")
+
+# Print PyTorch version
+print(f"PyTorch version: {torch.__version__}")
+
+pip install Cython
+
+pip install nemo_toolkit['all']
+
+****************************************
+* create custom transformers environmet with cuda *
+****************************************
+
+conda create --name custom_transformers python=3.8 -y
+
+conda activate custom_transformers 
+
+conda install -c conda-forge cudatoolkit=11.8 cudnn=8.1.0 -y
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+conda install jupyter
+
+import torch
+
+# Check if PyTorch is using the GPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"PyTorch is using: {device}")
+
+# Print PyTorch version
+print(f"PyTorch version: {torch.__version__}")
+
+
+
+
+
